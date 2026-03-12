@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import api from '../utils/api';
 import './BlogPost.css';
 
 export default function BlogPost() {
@@ -11,7 +12,7 @@ export default function BlogPost() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`/api/blogs/${slug}`)
+    api.get(`/api/blogs/${slug}`)
       .then(res => { setBlog(res.data); setLoading(false); })
       .catch(() => { setError('Post not found.'); setLoading(false); });
   }, [slug]);

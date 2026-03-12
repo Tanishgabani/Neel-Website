@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
-import axios from 'axios';
+import api from '../utils/api';
 import './Home.css';
 
 /* ---- Reusable Reveal Hook ---- */
@@ -32,7 +32,7 @@ export default function Home() {
   const heroRef = useRef(null);
 
   useEffect(() => {
-    axios.get('/api/blogs/featured')
+    api.get('/api/blogs/featured')
       .then(res => setFeaturedBlogs(res.data))
       .catch(() => {});
   }, []);

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import api from '../utils/api';
+
 import './Blog.css';
 
 const CATEGORIES = ['All', 'Technology', 'Sustainability', 'Industry News', 'Company Updates', 'Research'];
@@ -20,7 +22,7 @@ export default function Blog() {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('/api/blogs', {
+      const res = await api.get('/api/blogs', {
         params: { category, page, limit: 9 },
       });
       setBlogs(res.data.blogs);
@@ -34,7 +36,7 @@ export default function Blog() {
 
   const seedBlogs = async () => {
     try {
-      await axios.get('/api/blogs/seed');
+      await api.get('/api/blogs/seed');
       fetchBlogs();
     } catch {}
   };

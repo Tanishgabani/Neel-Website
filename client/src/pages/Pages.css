@@ -8,11 +8,111 @@
 }
 
 /* ---- ABOUT PAGE ---- */
-.about-intro {
+.site-theme-update {
+  font-family: var(--font-body), sans-serif;
+}
+
+.site-theme-update h1, 
+.site-theme-update h2, 
+.site-theme-update h3, 
+.site-theme-update h4, 
+.site-theme-update h5, 
+.site-theme-update h6 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+}
+
+.page-hero--about {
+  background: linear-gradient(135deg, #8B0000 0%, #1a1a4e 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 8rem 0 4rem;
+  min-height: 50vh;
+  justify-content: center;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.page-hero__bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 80px 80px, 120px 120px;
+  background-position: 0 0, 40px 40px;
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-intro-section {
+  padding: 6rem 0;
+}
+
+.about-intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 5rem;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.mission-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.mission-card__border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.mission-card__icon {
+  margin-bottom: 1.5rem;
+  color: var(--crimson);
+}
+
+.mission-card__icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.mission-card__title {
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.mission-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
 }
 
 .about-hex-display {
@@ -116,6 +216,59 @@
   margin: 0;
 }
 
+.tech-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--light-gray);
+  transition: transform var(--transition);
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+}
+
+.tech-card__bottom-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--tc-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.tech-card:hover .tech-card__bottom-border {
+  transform: scaleX(1);
+}
+
+.tech-card__icon {
+  color: var(--tc-color);
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  padding: 1rem;
+  background: rgba(0,0,0,0.03);
+  border-radius: var(--radius-md);
+}
+
+.tech-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+.tech-card__desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Timeline */
 .timeline {
   position: relative;
@@ -143,10 +296,19 @@
   position: relative;
 }
 
-.timeline-item.left .timeline-item__year { text-align: right; }
-.timeline-item.left .timeline-item__content { order: 3; }
-.timeline-item.right .timeline-item__year { order: 3; text-align: left; }
+.timeline-item.left .timeline-item__year { order: 1; text-align: right; }
+.timeline-item.left .timeline-item__dot { order: 2; }
+.timeline-item.left .timeline-item__content { order: 3; text-align: left; }
+
 .timeline-item.right .timeline-item__content { order: 1; text-align: right; }
+.timeline-item.right .timeline-item__dot { order: 2; }
+.timeline-item.right .timeline-item__year { order: 3; text-align: left; }
+
+.timeline-item__content {
+  word-wrap: break-word;
+  word-break: break-word;
+  padding: 0 0.5rem;
+}
 
 .timeline-item__year {
   font-family: var(--font-display);
@@ -159,9 +321,8 @@
   width: 16px;
   height: 16px;
   background: var(--blue);
-  border: 3px solid var(--white);
+  border: 3px solid transparent;
   border-radius: 50%;
-  box-shadow: 0 0 0 3px var(--blue);
   flex-shrink: 0;
   z-index: 1;
 }

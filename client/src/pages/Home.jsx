@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import api from '../utils/api';
+import axios from 'axios';
 import './Home.css';
 
 /* ---- Reusable Reveal Hook ---- */
@@ -27,6 +28,14 @@ function StatCounter({ end, suffix = '', prefix = '', label, sublabel }) {
   );
 }
 
+const SVGIcons = {
+  flask: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 3H15M10 9H14M3 21H21M7 21A2 2 0 0 1 5 19V14L9 10V3H15V10L19 14V19A2 2 0 0 1 17 21"/></svg>,
+  dollar: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>,
+  leaf: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><line x1="2" y1="22" x2="11" y2="20"></line></svg>,
+  shield: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>,
+  award: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+};
+
 export default function Home() {
   const [featuredBlogs, setFeaturedBlogs] = useState([]);
   const heroRef = useRef(null);
@@ -40,6 +49,7 @@ export default function Home() {
   const { ref: missionRef, inView: missionVisible } = useReveal();
   const { ref: techRef, inView: techVisible } = useReveal();
   const { ref: partnerRef, inView: partnerVisible } = useReveal();
+  const { ref: marketRef, inView: marketVisible } = useReveal();
 
   return (
     <div className="home">
@@ -75,28 +85,67 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__visual">
-            <div className="hero__earth-container animate-float">
-              <div className="hero__earth">
-                <div className="hero__earth-ring hero__earth-ring--1"></div>
-                <div className="hero__earth-ring hero__earth-ring--2"></div>
-                <div className="hero__earth-core">
-                  <svg viewBox="0 0 200 200" className="hero__earth-svg">
-                    <defs>
-                      <radialGradient id="earthGrad" cx="40%" cy="35%">
-                        <stop offset="0%" stopColor="#3DAA7A" />
-                        <stop offset="40%" stopColor="#2B5BA8" />
-                        <stop offset="100%" stopColor="#1a3a6e" />
-                      </radialGradient>
-                    </defs>
-                    <circle cx="100" cy="100" r="90" fill="url(#earthGrad)" />
-                    <ellipse cx="80" cy="85" rx="25" ry="18" fill="#3DAA7A" opacity="0.9" />
-                    <ellipse cx="115" cy="70" rx="15" ry="10" fill="#3DAA7A" opacity="0.8" />
-                    <ellipse cx="100" cy="120" rx="30" ry="20" fill="#3DAA7A" opacity="0.75" />
-                    <ellipse cx="60" cy="115" rx="12" ry="8" fill="#3DAA7A" opacity="0.7" />
-                    <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
-                    <ellipse cx="100" cy="100" rx="90" ry="30" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-                  </svg>
-                </div>
+            <div className="hero__globe-container animate-float">
+              {/* Asteroids/Moons in background */}
+              <div className="hero__moon hero__moon--1"></div>
+              <div className="hero__moon hero__moon--2"></div>
+              
+              <div className="hero__globe">
+                <svg viewBox="0 0 200 200" className="hero__globe-svg">
+                  <defs>
+                    <radialGradient id="globeOcean" cx="30%" cy="30%" r="70%">
+                      <stop offset="0%" stopColor="#1e3a8a" />
+                      <stop offset="60%" stopColor="#0a1a6e" />
+                      <stop offset="90%" stopColor="#08103d" />
+                      <stop offset="100%" stopColor="#38bdf8" />
+                    </radialGradient>
+                    <filter id="halo">
+                      <feGaussianBlur stdDeviation="4" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                    <clipPath id="globeClip">
+                      <circle cx="100" cy="100" r="90" />
+                    </clipPath>
+                    <radialGradient id="globeShadow" cx="30%" cy="30%" r="70%">
+                      <stop offset="60%" stopColor="transparent" />
+                      <stop offset="100%" stopColor="rgba(0,0,0,0.7)" />
+                    </radialGradient>
+                  </defs>
+                  
+                  {/* Halo and base sphere */}
+                  <circle cx="100" cy="100" r="90" fill="url(#globeOcean)" filter="url(#halo)" />
+                  
+                  {/* Continents */}
+                  <g clipPath="url(#globeClip)">
+                    <g className="globe-continents" fill="#15803d" opacity="0.95">
+                      {/* Americas */}
+                      <path d="M 25,45 C 35,35 60,30 55,40 C 65,40 70,50 65,65 C 55,75 50,60 40,70 C 35,80 40,90 45,95 C 45,100 40,105 35,100 C 30,95 25,85 20,70 C 15,55 20,50 25,45 Z" />
+                      <path d="M 45,95 C 55,90 65,95 65,105 C 65,115 55,135 50,150 C 45,160 40,165 35,150 C 30,135 30,110 45,95 Z" />
+                      {/* Eurasia */}
+                      <path d="M 90,40 C 100,30 140,25 160,35 C 180,45 190,65 190,80 C 180,95 160,100 150,90 C 145,85 135,90 120,80 C 105,70 110,60 100,50 C 95,50 90,45 90,40 Z" />
+                      {/* Africa */}
+                      <path d="M 95,75 C 110,70 125,80 135,90 C 145,105 135,140 120,150 C 110,160 100,150 95,130 C 90,110 85,90 95,75 Z" />
+                      {/* Australia & Islands */}
+                      <path d="M 160,115 C 175,110 185,120 185,135 C 185,145 170,155 160,145 C 150,140 155,125 160,115 Z" />
+                      <path d="M 140,110 C 145,110 145,115 140,115 Z M 190,150 C 195,150 195,155 190,155 Z" />
+
+                      {/* Duplicate shifted right by 200 for scrolling loop */}
+                      <path d="M 225,45 C 235,35 260,30 255,40 C 265,40 270,50 265,65 C 255,75 250,60 240,70 C 235,80 240,90 245,95 C 245,100 240,105 235,100 C 230,95 225,85 220,70 C 215,55 220,50 225,45 Z" />
+                      <path d="M 245,95 C 255,90 265,95 265,105 C 265,115 255,135 250,150 C 245,160 240,165 235,150 C 230,135 230,110 245,95 Z" />
+                      <path d="M 290,40 C 300,30 340,25 360,35 C 380,45 390,65 390,80 C 380,95 360,100 350,90 C 345,85 335,90 320,80 C 305,70 310,60 300,50 C 295,50 290,45 290,40 Z" />
+                      <path d="M 295,75 C 310,70 325,80 335,90 C 345,105 335,140 320,150 C 310,160 300,150 295,130 C 290,110 285,90 295,75 Z" />
+                      <path d="M 360,115 C 375,110 385,120 385,135 C 385,145 370,155 360,145 C 350,140 355,125 360,115 Z" />
+                      <path d="M 340,110 C 345,110 345,115 340,115 Z M 390,150 C 395,150 395,155 390,155 Z" />
+                    </g>
+                  </g>
+
+                  {/* Inner shadow for 3D effect */}
+                  <circle cx="100" cy="100" r="90" fill="url(#globeShadow)" />
+                  <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+                  
+                  {/* Dotted orbit ring */}
+                  <circle cx="100" cy="100" r="105" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeDasharray="4 8" />
+                </svg>
               </div>
               {/* Orbiting elements */}
               <div className="hero__orbit hero__orbit--1">
@@ -157,7 +206,7 @@ export default function Home() {
               <p>
                 We provide a sustainable and efficient Lithium-ion battery recycling clean-tech solution. Our low-cost, carbon-neutral process extracts precious commodities at the cheapest possible price, striving tirelessly to reduce CO₂ emissions.
               </p>
-              <Link to="/li-ion-battery" className="btn btn-secondary" style={{ marginTop: '1.5rem' }}>
+              <Link to="/li-ion-battery" className="btn btn-navy" style={{ marginTop: '1.5rem' }}>
                 Learn More →
               </Link>
             </div>
@@ -167,9 +216,11 @@ export default function Home() {
                 { num: 27, mass: '58.93', symbol: 'Co', name: 'Cobalt', color: 'var(--blue)' },
                 { num: 28, mass: '58.69', symbol: 'Ni', name: 'Nickel', color: 'var(--green)' },
               ].map((el) => (
-                <div key={el.symbol} className="element-card" style={{ '--el-color': el.color }}>
-                  <div className="element-card__num">{el.num}</div>
-                  <div className="element-card__mass">{el.mass}</div>
+                <div key={el.symbol} className="element-card glass-card-light" style={{ '--el-color': el.color }}>
+                  <div className="element-card__top">
+                    <div className="element-card__num">{el.num}</div>
+                    <div className="element-card__mass">{el.mass}</div>
+                  </div>
                   <div className="element-card__symbol">{el.symbol}</div>
                   <div className="element-card__name">{el.name}</div>
                 </div>
@@ -182,29 +233,32 @@ export default function Home() {
       {/* ====== BATTERY PROJECTION ====== */}
       <section className="section projection-section">
         <div className="container">
-          <div className="projection-header">
-            <span className="section-eyebrow">Market Outlook</span>
-            <h2 className="section-title">Li-Ion Battery Projection for 2030</h2>
-            <p className="section-subtitle">Soaring demand makes recycling not just responsible — it's essential.</p>
-          </div>
-          <div className="projection-stats">
-            {[
-              { value: '1,500', unit: 'GWh', label: 'Li-Ion Battery Market Globally', color: 'var(--crimson)' },
-              { value: '$400B', unit: '+', label: 'Total Market Size', color: 'var(--blue)' },
-              { value: '145M', unit: '', label: 'EVs on Roads by 2030', color: 'var(--green)' },
-              { value: '40X', unit: '', label: 'Lithium Demand Growth Rate', color: 'var(--crimson)' },
-            ].map((s) => (
-              <div key={s.label} className="projection-card" style={{ '--p-color': s.color }}>
-                <div className="projection-card__value">{s.value}<sup>{s.unit}</sup></div>
-                <div className="projection-card__label">{s.label}</div>
+          <div className={`reveal ${marketVisible ? 'visible' : ''}`} ref={marketRef}>
+            <div className="projection-header">
+              <span className="section-eyebrow">Market Outlook</span>
+              <h2 className="section-title">Li-Ion Battery Projection for 2030</h2>
+              <p className="section-subtitle">Soaring demand makes recycling not just responsible — it's essential.</p>
+            </div>
+            <div className="projection-stats">
+              {[
+                { value: '1,500', unit: 'GWh', label: 'Li-Ion Battery Market Globally', color: 'var(--crimson)' },
+                { value: '$400B', unit: '+', label: 'Total Market Size', color: 'var(--blue)' },
+                { value: '145M', unit: '', label: 'EVs on Roads by 2030', color: 'var(--green-light)' },
+                { value: '40X', unit: '', label: 'Lithium Demand Growth Rate', color: '#E5A937' },
+              ].map((s) => (
+                <div key={s.label} className="projection-card glass-card-dark" style={{ '--p-color': s.color }}>
+                  <div className="projection-card__value">{s.value}<span className="unit">{s.unit}</span></div>
+                  <div className="projection-card__label">{s.label}</div>
+                  <div className="projection-card__glow"></div>
+                </div>
+              ))}
+            </div>
+            <div className="projection-warning">
+              <div className="projection-warning__icon">⚡</div>
+              <div>
+                <strong>2.3 Million MT</strong> of End-of-Life Li-Ion Batteries expected by 2030.<br />
+                <span style={{ color: 'rgba(255,255,255,0.6)' }}>Recycling is no longer optional — it's a global imperative.</span>
               </div>
-            ))}
-          </div>
-          <div className="projection-warning">
-            <div className="projection-warning__icon">⚡</div>
-            <div>
-              <strong>2.3 Million MT</strong> of End-of-Life Li-Ion Batteries expected by 2030.<br />
-              <span style={{ color: 'var(--text-muted)' }}>Recycling is no longer optional — it's a global imperative.</span>
             </div>
           </div>
         </div>
@@ -220,44 +274,66 @@ export default function Home() {
           <div className={`tech-grid reveal ${techVisible ? 'visible' : ''}`} ref={techRef}>
             {[
               {
-                icon: '⚗️',
+                icon: SVGIcons.flask,
                 title: 'Unified Methodology',
                 desc: 'Simple process to recycle all types of Li-Ion batteries. No import dependency on raw materials.',
                 color: 'var(--crimson)',
               },
               {
-                icon: '💰',
+                icon: SVGIcons.dollar,
                 title: 'Cost Effective',
                 desc: 'Flexible model based on economies of scale, low cost of raw materials and solvents.',
                 color: 'var(--blue)',
               },
               {
-                icon: '🌿',
+                icon: SVGIcons.leaf,
                 title: 'Environment Friendly',
                 desc: 'Carbon Negative Process, closed loop with negligible waste generation. Self-Sustainable.',
                 color: 'var(--green)',
               },
               {
-                icon: '🔬',
+                icon: SVGIcons.shield,
                 title: 'Intellectual Property',
                 desc: 'Strong IP development for competitive advantage. Licensable Technology — unique and patented.',
                 color: 'var(--crimson)',
               },
             ].map((f) => (
-              <div key={f.title} className="tech-card" style={{ '--tc-color': f.color }}>
+              <div key={f.title} className="tech-card card-lift" style={{ '--tc-color': f.color }}>
                 <div className="tech-card__icon">{f.icon}</div>
                 <h3 className="tech-card__title">{f.title}</h3>
                 <p className="tech-card__desc">{f.desc}</p>
+                <div className="tech-card__bottom-border"></div>
               </div>
             ))}
           </div>
-          <div className="tech-process">
+          <div className="tech-process card shadow-sm">
             <span className="section-eyebrow">Our Process</span>
             <h3>The HYBRID-HYDROMETALLURGY-HHM™ Process</h3>
             <p>
-              At the core of our technology is the proprietary HHM™ process — recycling end-of-life lithium-ion batteries and manufacturing scrap into fresh cells using the circular economy model. Collection → Dismantling → Pre-processing → Processing.
+              At the core of our technology is the proprietary HHM™ process — recycling end-of-life lithium-ion batteries and manufacturing scrap into fresh cells using the circular economy model.
             </p>
-            <Link to="/battery-recycling" className="btn btn-outline">
+            <div className="process-flow">
+              <div className="process-flow__step">
+                <div className="process-flow__dot" style={{ backgroundColor: 'var(--crimson)' }}></div>
+                <span>Collection</span>
+              </div>
+              <div className="process-flow__connector"></div>
+              <div className="process-flow__step">
+                <div className="process-flow__dot" style={{ backgroundColor: 'var(--blue)' }}></div>
+                <span>Dismantling</span>
+              </div>
+              <div className="process-flow__connector"></div>
+              <div className="process-flow__step">
+                <div className="process-flow__dot" style={{ backgroundColor: 'var(--green-light)' }}></div>
+                <span>Pre-processing</span>
+              </div>
+              <div className="process-flow__connector"></div>
+              <div className="process-flow__step">
+                <div className="process-flow__dot" style={{ backgroundColor: 'var(--green)' }}></div>
+                <span>Processing</span>
+              </div>
+            </div>
+            <Link to="/battery-recycling" className="btn btn-outline" style={{ marginTop: '2rem' }}>
               Learn About Our Process →
             </Link>
           </div>
@@ -297,7 +373,7 @@ export default function Home() {
                   color: 'var(--green)',
                 },
               ].map((p) => (
-                <div key={p.title} className="partner-card" style={{ '--pc-color': p.color }}>
+                <div key={p.title} className="partner-card card-lift" style={{ '--pc-color': p.color }}>
                   <div className="partner-card__accent"></div>
                   <h4>{p.title}</h4>
                   <p>{p.desc}</p>
@@ -318,22 +394,23 @@ export default function Home() {
           </div>
           <div className="awards-grid">
             {[
-              'Business Incubation Partner',
-              'Business Accelerator',
-              'Technology Partner — IIT Guwahati',
-              'Top 30 Cleantech Startups of India',
-              'Technology Validation',
-              'Technology Partner — ISM Dhanbad',
-              'OIL-Supported Recycling Company',
-              'First Commercial Order',
-              'Technology Partner — IIT Kanpur',
-              'Low Carbon Emission Technology',
-              'Accreditation — BIRAC',
-              'AFD Recognition',
-            ].map((award) => (
-              <div key={award} className="award-badge">
-                <div className="award-badge__icon">🏆</div>
-                <span>{award}</span>
+              { text: 'Business Incubation Partner', color: 'var(--crimson)' },
+              { text: 'Business Accelerator', color: 'var(--blue)' },
+              { text: 'Technology Partner — IIT Guwahati', color: 'var(--green)' },
+              { text: 'Top 30 Cleantech Startups of India', color: 'var(--crimson)' },
+              { text: 'Technology Validation', color: 'var(--blue)' },
+              { text: 'Technology Partner — ISM Dhanbad', color: 'var(--green)' },
+              { text: 'OIL-Supported Recycling Company', color: 'var(--crimson)' },
+              { text: 'First Commercial Order', color: 'var(--blue)' },
+              { text: 'Technology Partner — IIT Kanpur', color: 'var(--green)' },
+              { text: 'Low Carbon Emission Technology', color: 'var(--crimson)' },
+              { text: 'Accreditation — BIRAC', color: 'var(--blue)' },
+              { text: 'AFD Recognition', color: 'var(--green)' },
+            ].map((award, i) => (
+              <div key={i} className="award-badge card-lift-sm" style={{ '--aw-color': award.color }}>
+                <div className="award-badge__icon" style={{ color: award.color }}>{SVGIcons.award}</div>
+                <span>{award.text}</span>
+                <div className="award-badge__bottom-border"></div>
               </div>
             ))}
           </div>
@@ -353,7 +430,7 @@ export default function Home() {
             </div>
             <div className="blog-preview-grid">
               {featuredBlogs.map((blog) => (
-                <Link key={blog._id} to={`/blog/${blog.slug}`} className="blog-preview-card card">
+                <Link key={blog._id} to={`/blog/${blog.slug}`} className="blog-preview-card card card-lift">
                   <div className="blog-preview-card__img">
                     <div className="blog-preview-card__img-placeholder">
                       <span>📄</span>

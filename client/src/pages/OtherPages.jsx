@@ -37,40 +37,39 @@ export function SdgGoals() {
           </div>
           <div className="sdg-grid">
             {sdgs.map(s => (
-              <div key={s.num} className="sdg-card" style={{ background: s.color }}>
-                <div className="sdg-card__num">{s.num}</div>
-                <div className="sdg-card__title">{s.title}</div>
-                <p className="sdg-card__desc">{s.desc}</p>
+              <div key={s.num} className="sdg-card card-light" style={{ borderTop: `4px solid ${s.color}`, padding: '2rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+                  <div className="sdg-card__num" style={{ color: s.color, opacity: 0.15, fontSize: '3.5rem', marginTop: '-0.5rem' }}>{s.num}</div>
+                </div>
+                <h3 className="sdg-card__title" style={{ color: 'var(--text-dark)', fontSize: '1.2rem', marginBottom: '0.75rem' }}>{s.title}</h3>
+                <p className="sdg-card__desc" style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--off-white)' }}>
+      <section className="section" style={{ background: 'var(--navy)' }}>
         <div className="container">
           <div className="about-intro">
             <div className="about-intro__content">
-              <span className="section-eyebrow">Measuring Impact</span>
-              <h2 className="section-title">Our Environmental Impact</h2>
-              <div className="divider"></div>
-              <p>For every tonne of batteries we recycle, we prevent approximately <strong>12 tonnes of CO₂ equivalent</strong> from being released — compared to extracting the same materials through virgin mining.</p>
-              <p>Our closed-loop water recycling system reduces freshwater consumption by <strong>up to 70%</strong> versus conventional hydrometallurgical processes.</p>
-              <p>By recovering and refining materials domestically, we reduce India's dependence on imported critical minerals — strengthening national energy security while creating local employment.</p>
+              <span className="section-eyebrow" style={{ color: 'var(--gold)' }}>Measuring Impact</span>
+              <h2 className="section-title" style={{ color: 'var(--white)' }}>Our Environmental Impact</h2>
+              <div className="divider" style={{ background: 'var(--gold)' }}></div>
+              <p style={{ color: 'var(--text-light)' }}>For every tonne of batteries we recycle, we prevent approximately <strong>12 tonnes of CO₂ equivalent</strong> from being released — compared to extracting the same materials through virgin mining.</p>
+              <p style={{ color: 'var(--text-light)' }}>Our closed-loop water recycling system reduces freshwater consumption by <strong>up to 70%</strong> versus conventional hydrometallurgical processes.</p>
+              <p style={{ color: 'var(--text-light)' }}>By recovering and refining materials domestically, we reduce India's dependence on imported critical minerals — strengthening national energy security while creating local employment.</p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               {[
-                { value: '12 tonnes', label: 'CO₂ Prevented per Tonne Recycled', color: 'var(--green)' },
+                { value: '12 tonnes', label: 'CO₂ Prevented per Tonne Recycled', color: 'var(--teal)' },
                 { value: '70%', label: 'Water Consumption Reduction', color: 'var(--blue)' },
                 { value: '95%', label: 'Material Recovery Rate', color: 'var(--crimson)' },
-                { value: 'Zero', label: 'Toxic Gas Emissions', color: 'var(--green)' },
+                { value: 'Zero', label: 'Toxic Gas Emissions', color: 'var(--teal)' },
               ].map(m => (
-                <div key={m.label} style={{
-                  background: 'var(--white)', borderRadius: 'var(--radius-lg)', padding: '1.5rem',
-                  textAlign: 'center', borderTop: `3px solid ${m.color}`
-                }}>
+                <div key={m.label} className="card-dark" style={{ padding: '1.5rem', textAlign: 'center', borderTop: `3px solid ${m.color}` }}>
                   <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, color: m.color, marginBottom: '0.5rem' }}>{m.value}</div>
-                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{m.label}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-light)' }}>{m.label}</div>
                 </div>
               ))}
             </div>
@@ -124,13 +123,13 @@ export function Contact() {
               <h2 className="section-title" style={{ marginBottom: '2rem' }}>We're Here to Help</h2>
               <div className="contact-info-cards">
                 {[
-                  { icon: '📞', label: 'Phone', value: '+91-080-29908945 / +91-7899752431' },
-                  { icon: '✉️', label: 'Email', value: 'info@raremines.com' },
-                  { icon: '📍', label: 'Address', value: 'Bengaluru, Karnataka, India — 561203' },
-                  { icon: '🕐', label: 'Business Hours', value: 'Mon–Sat: 9:00 AM – 6:00 PM IST' },
+                  { icon: <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>, label: 'Phone', value: '+91-080-29908945 / +91-7899752431' },
+                  { icon: <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>, label: 'Email', value: 'info@raremines.com' },
+                  { icon: <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>, label: 'Address', value: 'Bengaluru, Karnataka, India — 561203' },
+                  { icon: <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>, label: 'Business Hours', value: 'Mon–Sat: 9:00 AM – 6:00 PM IST' },
                 ].map(c => (
-                  <div key={c.label} className="contact-info-card">
-                    <div className="contact-info-card__icon">{c.icon}</div>
+                  <div key={c.label} className="contact-info-card card-light" style={{ padding: '1.5rem', display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+                    <div className="contact-info-card__icon" style={{ color: 'var(--crimson)' }}>{c.icon}</div>
                     <div>
                       <div className="contact-info-card__label">{c.label}</div>
                       <div className="contact-info-card__value">{c.value}</div>

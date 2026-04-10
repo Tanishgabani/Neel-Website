@@ -7,12 +7,14 @@ import './Blog.css';
 export function LiIonBattery() {
   return (
     <div className="liion-page">
-      <section className="page-hero page-hero--liion">
-        <div className="page-hero__bg"></div>
+      <section className="page-hero page-hero--liion" style={{ background: 'linear-gradient(135deg, var(--crimson) 0%, var(--navy) 100%)' }}>
+        <div className="page-hero__bg">
+          <div className="page-hero__bg-pattern"></div>
+        </div>
         <div className="container page-hero__content">
-          <span className="section-eyebrow">Battery Technology</span>
-          <h1>Li-Ion Battery Recycling</h1>
-          <p>Understanding the most dominant battery technology and why sustainable recycling is critical.</p>
+          <span className="section-eyebrow" style={{ color: 'var(--teal)' }}>Battery Technology</span>
+          <h1 style={{ color: 'var(--white)' }}>Li-Ion Battery Recycling</h1>
+          <p style={{ color: 'var(--text-light)' }}>Understanding the most dominant battery technology and why sustainable recycling is critical.</p>
         </div>
       </section>
 
@@ -36,16 +38,16 @@ export function LiIonBattery() {
             <div>
               <div className="tech-detail-grid">
                 {[
-                  { value: '1,500', unit: 'GWh', label: 'Global Li-Ion Market by 2030' },
-                  { value: '145M', unit: '', label: 'EVs on Road by 2030' },
-                  { value: '40X', unit: '', label: 'Lithium Demand Growth' },
-                  { value: '2.3M MT', unit: '', label: 'EOL Batteries by 2030' },
-                  { value: '95%', unit: '', label: 'Material Recovery Rate' },
-                  { value: 'Carbon', unit: '', label: 'Neutral Process' },
+                  { value: '1,500', unit: 'GWh', label: 'Global Li-Ion Market by 2030', color: 'var(--blue)' },
+                  { value: '145M', unit: '', label: 'EVs on Road by 2030', color: 'var(--teal)' },
+                  { value: '40X', unit: '', label: 'Lithium Demand Growth', color: 'var(--crimson)' },
+                  { value: '2.3M MT', unit: '', label: 'EOL Batteries by 2030', color: 'var(--gold)' },
+                  { value: '95%', unit: '', label: 'Material Recovery Rate', color: 'var(--teal)' },
+                  { value: 'Carbon', unit: '', label: 'Neutral Process', color: 'var(--blue)' },
                 ].map(s => (
-                  <div key={s.label} className="detail-card">
-                    <div className="detail-card__value">{s.value}</div>
-                    <div className="detail-card__label">{s.label}</div>
+                  <div key={s.label} className="card-dark" style={{ padding: '2rem', textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 800, color: s.color, marginBottom: '0.25rem' }}>{s.value}</div>
+                    <div style={{ fontWeight: 600, fontSize: '0.875rem', color: 'var(--text-light)' }}>{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -67,19 +69,16 @@ export function LiIonBattery() {
             {[
               { num: 3, mass: '6.94', symbol: 'Li', name: 'Lithium', demand: '250,000–450,000 TON demand by 2030', color: 'var(--crimson)', desc: 'Essential for battery cathodes. Powers the charge-discharge cycle in every Li-ion cell.' },
               { num: 27, mass: '58.93', symbol: 'Co', name: 'Cobalt', demand: '1.3M–2.4M TON demand by 2030', color: 'var(--blue)', desc: 'Stabilizes battery chemistry and improves energy density in NMC and NCA cathodes.' },
-              { num: 28, mass: '58.69', symbol: 'Ni', name: 'Nickel', demand: '250,000–450,000 TON demand by 2030', color: 'var(--green)', desc: 'Increases energy capacity and reduces cost. Trending toward higher Ni content batteries.' },
+              { num: 28, mass: '58.69', symbol: 'Ni', name: 'Nickel', demand: '250,000–450,000 TON demand by 2030', color: 'var(--teal)', desc: 'Increases energy capacity and reduces cost. Trending toward higher Ni content batteries.' },
             ].map(el => (
-              <div key={el.symbol} style={{
-                background: 'var(--white)', borderRadius: 'var(--radius-lg)', padding: '2rem',
-                borderTop: `4px solid ${el.color}`, boxShadow: 'var(--shadow-sm)'
-              }}>
+              <div key={el.symbol} className="card-light" style={{ padding: '2rem', borderTop: `4px solid ${el.color}` }}>
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{
-                    width: '70px', height: '70px', background: el.color,
-                    clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                    width: '70px', height: '70px', background: `${el.color}15`, border: `1px solid ${el.color}50`,
+                    borderRadius: 'var(--radius-lg)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                   }}>
-                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, color: 'white' }}>{el.symbol}</span>
+                    <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.75rem', fontWeight: 800, color: el.color }}>{el.symbol}</span>
                   </div>
                   <div>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 700 }}>{el.name}</div>
@@ -88,8 +87,8 @@ export function LiIonBattery() {
                 </div>
                 <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>{el.desc}</p>
                 <div style={{
-                  background: `${el.color}15`, padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)',
-                  fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: el.color, fontWeight: 600
+                  background: `${el.color}10`, padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)',
+                  fontSize: '0.75rem', fontFamily: 'var(--font-body)', color: el.color, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase'
                 }}>{el.demand}</div>
               </div>
             ))}

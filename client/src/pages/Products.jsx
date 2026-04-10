@@ -5,7 +5,6 @@ import './Pages.css';
 export default function Products() {
   const products = [
     {
-      icon: '🔋',
       symbol: 'Li', atomicNum: 3,
       name: 'Lithium Carbonate / Hydroxide',
       grade: 'Battery Grade',
@@ -15,7 +14,6 @@ export default function Products() {
       applications: ['EV Batteries', 'Grid Storage', 'Consumer Electronics'],
     },
     {
-      icon: '⚙️',
       symbol: 'Co', atomicNum: 27,
       name: 'Cobalt Sulfate',
       grade: 'Battery Grade',
@@ -25,42 +23,38 @@ export default function Products() {
       applications: ['NMC Cathodes', 'NCA Cathodes', 'Electroplating'],
     },
     {
-      icon: '⚗️',
       symbol: 'Ni', atomicNum: 28,
       name: 'Nickel Sulfate',
       grade: 'Battery Grade',
       purity: '≥22% Ni',
-      color: 'var(--green)',
+      color: 'var(--teal)',
       desc: 'Recovered nickel sulfate for high-energy cathode materials. Supports the industry\'s shift toward higher nickel content batteries.',
       applications: ['High-Energy Cathodes', 'EV Batteries', 'Industrial'],
     },
     {
-      icon: '🔩',
       symbol: 'Mn', atomicNum: 25,
       name: 'Manganese Sulfate',
       grade: 'Battery Grade',
       purity: '≥99.5%',
-      color: 'var(--crimson)',
+      color: 'var(--navy)',
       desc: 'Manganese sulfate monohydrate for LMO and NMC cathode synthesis. An essential component for next-generation battery chemistries.',
       applications: ['LMO Batteries', 'NMC Cathodes', 'Fertilizers'],
     },
     {
-      icon: '🪙',
       symbol: 'Cu', atomicNum: 29,
       name: 'Copper Scrap / Foil',
       grade: 'Industrial Grade',
       purity: '≥99%',
-      color: 'var(--blue)',
+      color: 'var(--gold)',
       desc: 'High-purity copper recovered from battery current collectors and electronic waste, suitable for industrial applications.',
       applications: ['Electrical Wiring', 'Electronics', 'Industrial Manufacturing'],
     },
     {
-      icon: '🧪',
       symbol: 'Al', atomicNum: 13,
       name: 'Aluminium Scrap',
       grade: 'Industrial Grade',
       purity: '≥98%',
-      color: 'var(--green)',
+      color: 'var(--teal)',
       desc: 'Recovered aluminium from battery casings and cathode current collectors, ready for re-smelting and re-use.',
       applications: ['Packaging', 'Automotive', 'Construction'],
     },
@@ -68,12 +62,14 @@ export default function Products() {
 
   return (
     <div className="products-page">
-      <section className="page-hero page-hero--products">
-        <div className="page-hero__bg"></div>
+      <section className="page-hero page-hero--products" style={{ background: 'linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%)' }}>
+        <div className="page-hero__bg">
+          <div className="page-hero__bg-pattern"></div>
+        </div>
         <div className="container page-hero__content">
-          <span className="section-eyebrow">What We Produce</span>
-          <h1>Our Products</h1>
-          <p>Battery-grade and industrial-grade materials recovered through our HHM™ recycling process.</p>
+          <span className="section-eyebrow" style={{ color: 'var(--gold)' }}>What We Produce</span>
+          <h1 style={{ color: 'var(--white)' }}>Our Products</h1>
+          <p style={{ color: 'var(--text-light)' }}>Battery-grade and industrial-grade materials recovered through our HHM™ recycling process.</p>
         </div>
       </section>
 
@@ -117,6 +113,7 @@ export default function Products() {
                       }}>{a}</span>
                     ))}
                   </div>
+                  <div className="product-card__bottom-border" style={{ background: p.color }}></div>
                 </div>
               </div>
             ))}

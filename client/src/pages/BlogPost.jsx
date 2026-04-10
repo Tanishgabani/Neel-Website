@@ -67,9 +67,15 @@ export default function BlogPost() {
                 <div className="blog-post-hero__date">{formatDate(blog.createdAt)}</div>
               </div>
             </div>
-            <div className="blog-post-hero__stats">
-              <span>📖 {blog.readTime} min read</span>
-              <span>👁 {blog.views} views</span>
+            <div className="blog-post-hero__stats" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <span style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                {blog.readTime} min read
+              </span>
+              <span style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                {blog.views} views
+              </span>
             </div>
           </div>
         </div>
@@ -114,7 +120,7 @@ export default function BlogPost() {
 
           {/* Sidebar */}
           <aside className="blog-post-sidebar">
-            <div className="sidebar-card">
+            <div className="sidebar-card card-light">
               <h4>About Rare Mines</h4>
               <div className="sidebar-logo">
                 <div className="sidebar-logo-hex"><span>R</span></div>
@@ -128,14 +134,14 @@ export default function BlogPost() {
                 Learn More
               </Link>
             </div>
-            <div className="sidebar-card">
+            <div className="sidebar-card card-light">
               <h4>Inquire With Us</h4>
               <p>Have Li-Ion batteries to recycle or need battery-grade materials?</p>
               <Link to="/contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
                 Contact Us
               </Link>
             </div>
-            <div className="sidebar-card">
+            <div className="sidebar-card card-light" style={{ padding: '2rem' }}>
               <h4>Quick Links</h4>
               <ul className="sidebar-links">
                 {[

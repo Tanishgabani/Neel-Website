@@ -32,10 +32,10 @@ export default function BatteryRecycling() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginBottom: '4rem' }}>
             {[
-              { icon: '🚗', label: 'EV Batteries', desc: 'Complete packs and modules' },
-              { icon: '📱', label: 'Consumer Electronics', desc: 'Laptops, phones, tablets' },
-              { icon: '⚡', label: 'Grid Storage', desc: 'Stationary energy systems' },
-              { icon: '🛸', label: 'Industrial Batteries', desc: 'UPS, forklifts, aerospace' },
+              { icon: <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a1 1 0 00-.8-.4H8.32a2 2 0 00-1.93 1.46L4 14v2h3m7 0v-2m-7 0a3 3 0 106 0m4 0a3 3 0 106 0"/></svg>, label: 'EV Batteries', desc: 'Complete packs and modules' },
+              { icon: <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>, label: 'Consumer Electronics', desc: 'Laptops, phones, tablets' },
+              { icon: <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>, label: 'Grid Storage', desc: 'Stationary energy systems' },
+              { icon: <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>, label: 'Industrial Batteries', desc: 'UPS, forklifts, aerospace' },
             ].map(w => (
               <div key={w.label} style={{
                 background: 'var(--off-white)', borderRadius: 'var(--radius-lg)', padding: '2rem',
@@ -79,12 +79,12 @@ export default function BatteryRecycling() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
             {[
-              { title: 'Carbon Neutral', icon: '🌿', desc: 'Zero net carbon emissions. Closed-loop process with energy recovery at every stage.', color: 'var(--green)' },
-              { title: 'No Toxic Emissions', icon: '💨', desc: 'Aqueous chemistry eliminates toxic gas emissions associated with high-temperature smelting.', color: 'var(--blue)' },
-              { title: '≥95% Recovery Rate', icon: '♻️', desc: 'Industry-leading material recovery rates — maximizing value from every battery processed.', color: 'var(--crimson)' },
-              { title: 'Battery-Grade Purity', icon: '🔬', desc: 'Direct cathode precursor synthesis — no intermediate steps required before reuse.', color: 'var(--blue)' },
-              { title: 'Handles All Chemistries', icon: '⚗️', desc: 'Single unified process handles NMC, NCA, LFP, LMO, and all major Li-Ion chemistries.', color: 'var(--green)' },
-              { title: 'Cost Competitive', icon: '💰', desc: 'Lower energy requirements and no import dependency keep operational costs minimal.', color: 'var(--crimson)' },
+              { title: 'Carbon Neutral', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 20A7 7 0 014 13v-3h3v3a4 4 0 004 4h3m4-4h3V4h-3v3a4 4 0 00-4 4h-3m4 8v3h-3v-3"/></svg>, desc: 'Zero net carbon emissions. Closed-loop process with energy recovery at every stage.', color: 'var(--green)' },
+              { title: 'No Toxic Emissions', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg>, desc: 'Aqueous chemistry eliminates toxic gas emissions associated with high-temperature smelting.', color: 'var(--blue)' },
+              { title: '≥95% Recovery Rate', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>, desc: 'Industry-leading material recovery rates — maximizing value from every battery processed.', color: 'var(--crimson)' },
+              { title: 'Battery-Grade Purity', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>, desc: 'Direct cathode precursor synthesis — no intermediate steps required before reuse.', color: 'var(--blue)' },
+              { title: 'Handles All Chemistries', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31L20 16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4l6-6.69V9.31Z"/></svg>, desc: 'Single unified process handles NMC, NCA, LFP, LMO, and all major Li-Ion chemistries.', color: 'var(--green)' },
+              { title: 'Cost Competitive', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 5V3a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="12" r="3"/></svg>, desc: 'Lower energy requirements and no import dependency keep operational costs minimal.', color: 'var(--crimson)' },
             ].map(a => (
               <div key={a.title} style={{
                 background: 'var(--white)', borderRadius: 'var(--radius-lg)', padding: '2rem',

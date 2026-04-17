@@ -40,13 +40,13 @@ export default function Footer() {
                 <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="footer__social-link">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter" className="footer__social-link">
+                <a href="https://x.com/raremines" target="_blank" rel="noreferrer" aria-label="X (Twitter)" className="footer__social-link">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="footer__social-link">
+                <a href="https://www.linkedin.com/company/rareminescleantech/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="footer__social-link">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="footer__social-link">
+                <a href="https://www.instagram.com/rareminescleantech" target="_blank" rel="noreferrer" aria-label="Instagram" className="footer__social-link">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                 </a>
                 <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="footer__social-link">
@@ -99,19 +99,19 @@ export default function Footer() {
                   <span className="footer__contact-icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                   </span>
-                  <span>+91-080-29908945 / +91-7899752431</span>
+                  <span>+91 99796 55136 / +91 99047 95556</span>
                 </div>
                 <div className="footer__contact-item">
                   <span className="footer__contact-icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                   </span>
-                  <a href="mailto:info@raremines.com">info@raremines.com</a>
+                  <a href="mailto:info@raremines.in">info@raremines.in</a>
                 </div>
                 <div className="footer__contact-item">
                   <span className="footer__contact-icon">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   </span>
-                  <span>Bengaluru, Karnataka, India</span>
+                  <span>Surat, Gujarat, India, 395006</span>
                 </div>
               </div>
 

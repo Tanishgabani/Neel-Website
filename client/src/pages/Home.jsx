@@ -67,8 +67,8 @@ export default function Home() {
               Clean Technology · Sustainable Future
             </div>
             <h1 className="hero__title">
-              Extracting<br />
-              <span className="hero__title-accent">What Matters</span>
+              Redefining<br />
+              <span className="hero__title-accent">Rare</span>
             </h1>
             <p className="hero__tagline">FOR A BETTER WORLD</p>
             <p className="hero__desc">

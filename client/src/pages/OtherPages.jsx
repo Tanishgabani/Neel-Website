@@ -206,9 +206,16 @@ export function Contact() {
                       </div>
                     </div>
                     {status && <p style={{ color: 'var(--crimson)', fontSize: '0.875rem', marginBottom: '1rem' }}>{status}</p>}
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }} disabled={loading}>
-                      {loading ? 'Sending...' : 'Send Message →'}
-                    </button>
+                    <div style={{ marginTop: '2.5rem' }}>
+                      <button 
+                        type="submit" 
+                        className="btn btn-primary" 
+                        style={{ width: '100%', borderRadius: 'var(--radius-md)', padding: '1rem' }} 
+                        disabled={loading}
+                      >
+                        {loading ? 'Sending...' : 'Send Message →'}
+                      </button>
+                    </div>
                   </form>
                 </>
               )}

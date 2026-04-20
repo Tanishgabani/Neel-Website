@@ -46,6 +46,17 @@ exports.getBlogBySlug = async (req, res) => {
   }
 };
 
+// GET single blog by ID (for admin editing)
+exports.getBlogById = async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    if (!blog) return res.status(404).json({ message: 'Blog not found' });
+    res.json(blog);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 // GET featured/latest 3 blogs
 exports.getFeaturedBlogs = async (req, res) => {
   try {

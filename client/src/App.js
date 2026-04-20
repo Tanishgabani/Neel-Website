@@ -17,6 +17,9 @@ import BatteryRecycling from './pages/BatteryRecycling';
 import { SdgGoals, Contact, NotFound } from './pages/OtherPages';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import BlogForm from './pages/BlogForm';
 
 function App() {
   return (
@@ -36,6 +39,10 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="/admin/blog/new" element={<BlogForm />} />
+              <Route path="/admin/blog/edit/:id" element={<BlogForm />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

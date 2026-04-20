@@ -34,13 +34,8 @@ export default function Blog() {
     }
   };
 
-  const seedBlogs = async () => {
-    try {
-      await api.get('/api/blogs/seed');
-      fetchBlogs();
-    } catch {}
-  };
-
+  // removed seedBlogs function for production safety
+  
   return (
     <div className="blog-page">
       {/* Hero */}
@@ -82,7 +77,7 @@ export default function Blog() {
           ) : error ? (
             <div className="blog-error">
               <p>{error}</p>
-              <button className="btn btn-primary" onClick={seedBlogs}>Load Sample Posts</button>
+              <button className="btn btn-primary" onClick={fetchBlogs}>Retry Loading</button>
             </div>
           ) : blogs.length === 0 ? (
             <div className="blog-empty">
@@ -90,8 +85,7 @@ export default function Blog() {
                 <svg width="60" height="60" fill="none" stroke="var(--blue)" strokeWidth="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
               </div>
               <h3>No posts yet</h3>
-              <p>Check back soon, or load our sample posts.</p>
-              <button className="btn btn-primary" onClick={seedBlogs}>Load Sample Posts</button>
+              <p>We are working on fresh content. Please check back later!</p>
             </div>
           ) : (
             <div className="blog-grid">
@@ -139,9 +133,19 @@ function BlogCard({ blog }) {
   };
 
   return (
-    <Link to={`/blog/${blog.slug}`} className="blog-card card-light">
+    <Link to={`/blog/${blog.slug}`} className="blog-card card-light" style={{ overflow: 'hidden' }}>
       <div className="blog-card__img">
-        <div className="blog-card__img-inner"></div>
+        <div className="blog-card__img-inner">
+          {blog.coverImage ? (
+            <img 
+              src={blog.coverImage} 
+              alt={blog.title} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
+          ) : (
+            <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, var(--crimson-dark) 0%, var(--blue) 60%, var(--green-dark) 100%)' }} />
+          )}
+        </div>
         <span className={`badge ${categoryColors[blog.category] || 'badge-blue'} blog-card__cat`}>
           {blog.category}
         </span>

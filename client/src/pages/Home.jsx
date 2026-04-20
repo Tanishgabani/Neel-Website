@@ -37,14 +37,9 @@ const SVGIcons = {
 };
 
 export default function Home() {
-  const [featuredBlogs, setFeaturedBlogs] = useState([]);
   const heroRef = useRef(null);
 
-  useEffect(() => {
-    api.get('/api/blogs/featured')
-      .then(res => setFeaturedBlogs(res.data))
-      .catch(() => {});
-  }, []);
+
 
   const { ref: missionRef, inView: missionVisible } = useReveal();
   const { ref: techRef, inView: techVisible } = useReveal();
@@ -417,42 +412,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ====== BLOG PREVIEW ====== */}
-      {featuredBlogs.length > 0 && (
-        <section className="section blog-preview-section">
-          <div className="container">
-            <div className="blog-preview-header">
-              <div>
-                <span className="section-eyebrow">Latest Insights</span>
-                <h2 className="section-title">From Our Blog</h2>
-              </div>
-              <Link to="/blog" className="btn btn-outline">View All Posts →</Link>
-            </div>
-            <div className="blog-preview-grid">
-              {featuredBlogs.map((blog) => (
-                <Link key={blog._id} to={`/blog/${blog.slug}`} className="blog-preview-card card card-lift">
-                  <div className="blog-preview-card__img">
-                    <div className="blog-preview-card__img-placeholder">
-                      <span>📄</span>
-                    </div>
-                    <span className="badge badge-blue" style={{ position: 'absolute', top: '1rem', left: '1rem' }}>
-                      {blog.category}
-                    </span>
-                  </div>
-                  <div className="blog-preview-card__body">
-                    <h3 className="blog-preview-card__title">{blog.title}</h3>
-                    <p className="blog-preview-card__excerpt">{blog.excerpt}</p>
-                    <div className="blog-preview-card__meta">
-                      <span>{blog.author?.name}</span>
-                      <span>{blog.readTime} min read</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+
 
       {/* ====== NEWSLETTER CTA ====== */}
       <NewsletterSection />

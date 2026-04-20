@@ -55,6 +55,11 @@ export default function BlogPost() {
           <div className="blog-post-hero__breadcrumb">
             <Link to="/">Home</Link> / <Link to="/blog">Blog</Link> / <span>{blog.title}</span>
           </div>
+          {blog.coverImage && (
+            <div style={{ width: '100%', height: '400px', borderRadius: 'var(--radius-lg)', overflow: 'hidden', margin: '2rem 0', boxShadow: 'var(--shadow-lg)' }}>
+              <img src={blog.coverImage} alt={blog.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+          )}
           <span className={`badge badge-blue blog-post-hero__cat`}>{blog.category}</span>
           <h1 className="blog-post-hero__title">{blog.title}</h1>
           <div className="blog-post-hero__meta">

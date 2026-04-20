@@ -39,8 +39,6 @@ const SVGIcons = {
 export default function Home() {
   const heroRef = useRef(null);
 
-
-
   const { ref: missionRef, inView: missionVisible } = useReveal();
   const { ref: techRef, inView: techVisible } = useReveal();
   const { ref: partnerRef, inView: partnerVisible } = useReveal();
@@ -419,8 +417,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
 
       {/* ====== NEWSLETTER CTA ====== */}
       <NewsletterSection />

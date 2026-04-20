@@ -1,6 +1,12 @@
 {
   "name": "raremines-cleantech-website",
   "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+
   "description": "Full-stack MERN website for Rare Mines Cleantech Pvt Ltd",
   "scripts": {
     "install:all": "npm install && cd client && npm install && cd ../server && npm install",
@@ -13,8 +19,5 @@
     "concurrently": "^8.2.2"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "jsonwebtoken": "^9.0.3",
-    "react-quill": "^2.0.0"
   }
 }

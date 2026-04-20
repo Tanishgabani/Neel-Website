@@ -15,7 +15,9 @@ export default function BatteryRecycling() {
   return (
     <div className="recycling-page">
       <section className="page-hero page-hero--recycling">
-        <div className="page-hero__bg"></div>
+        <div className="page-hero__bg">
+          <div className="page-hero__bg-pattern"></div>
+        </div>
         <div className="container page-hero__content">
           <span className="section-eyebrow">Our Core Service</span>
           <h1>Battery Recycling Services</h1>

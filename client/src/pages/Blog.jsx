@@ -45,7 +45,9 @@ export default function Blog() {
     <div className="blog-page">
       {/* Hero */}
       <section className="page-hero page-hero--blog">
-        <div className="page-hero__bg"></div>
+        <div className="page-hero__bg">
+          <div className="page-hero__bg-pattern"></div>
+        </div>
         <div className="container page-hero__content">
           <span className="section-eyebrow">Knowledge Hub</span>
           <h1>Our Blog</h1>

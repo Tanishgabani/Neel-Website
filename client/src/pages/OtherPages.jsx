@@ -18,7 +18,9 @@ export function SdgGoals() {
   return (
     <div className="sdg-page">
       <section className="page-hero page-hero--sdg">
-        <div className="page-hero__bg"></div>
+        <div className="page-hero__bg">
+          <div className="page-hero__bg-pattern"></div>
+        </div>
         <div className="container page-hero__content">
           <span className="section-eyebrow">UN Goals</span>
           <h1>Sustainable Development Goals</h1>
@@ -107,7 +109,9 @@ export function Contact() {
   return (
     <div className="contact-page">
       <section className="page-hero page-hero--contact">
-        <div className="page-hero__bg"></div>
+        <div className="page-hero__bg">
+          <div className="page-hero__bg-pattern"></div>
+        </div>
         <div className="container page-hero__content">
           <span className="section-eyebrow">Reach Out</span>
           <h1>Contact Us</h1>

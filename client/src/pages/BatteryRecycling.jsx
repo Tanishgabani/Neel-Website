@@ -19,7 +19,7 @@ export default function BatteryRecycling() {
         <div className="container page-hero__content">
           <span className="section-eyebrow">Our Core Service</span>
           <h1>Battery Recycling Services</h1>
-          <p>From collection to crystallization — our end-to-end HHM™ process transforms end-of-life batteries into valuable resources.</p>
+          <p>From collection to crystallization — our end-to-end HHM™ process transforms end-of-life batteries natively in India, securing valuable resources for the domestic supply chain.</p>
         </div>
       </section>
 
@@ -53,7 +53,7 @@ export default function BatteryRecycling() {
             <span className="section-eyebrow">Unique & Patented</span>
             <h2 className="section-title">The HHM™ Process</h2>
             <p className="section-subtitle" style={{ margin: '0 auto 3rem' }}>
-              Our HYBRID-HYDROMETALLURGY™ process recycles end-of-life lithium-ion batteries into fresh battery materials using the circular economy model.
+              Our indigenous HYBRID-HYDROMETALLURGY™ process recycles end-of-life lithium-ion batteries into fresh battery materials right here in India, building a resilient closed-loop economy.
             </p>
           </div>
           <div className="process-steps">
@@ -84,7 +84,7 @@ export default function BatteryRecycling() {
               { title: '≥95% Recovery Rate', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12a9 9 0 109-9 9.75 9.75 0 00-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>, desc: 'Industry-leading material recovery rates — maximizing value from every battery processed.', color: 'var(--crimson)' },
               { title: 'Battery-Grade Purity', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>, desc: 'Direct cathode precursor synthesis — no intermediate steps required before reuse.', color: 'var(--blue)' },
               { title: 'Handles All Chemistries', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 2v7.31M14 9.31V2M8.5 2h7M14 9.31L20 16v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4l6-6.69V9.31Z"/></svg>, desc: 'Single unified process handles NMC, NCA, LFP, LMO, and all major Li-Ion chemistries.', color: 'var(--green)' },
-              { title: 'Cost Competitive', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 5V3a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="12" r="3"/></svg>, desc: 'Lower energy requirements and no import dependency keep operational costs minimal.', color: 'var(--crimson)' },
+              { title: 'Self-Reliant & Cost Competitive', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 5V3a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><circle cx="12" cy="12" r="3"/></svg>, desc: 'Lower energy requirements and zero import dependency keep operational costs minimal for India.', color: 'var(--crimson)' },
             ].map(a => (
               <div key={a.title} style={{
                 background: 'var(--white)', borderRadius: 'var(--radius-lg)', padding: '2rem',

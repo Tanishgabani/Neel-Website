@@ -38,7 +38,7 @@ export default function AboutUs() {
         <div className="container page-hero__content">
           <span className="section-eyebrow">Who We Are</span>
           <h1 className="hero__title">About Rare Mines</h1>
-          <p className="hero__tagline">A clean technology company committed to a sustainable future through innovative battery recycling.</p>
+          <p className="hero__tagline">An indigenous clean technology company committed to India's self-reliance (Atmanirbhar Bharat) and a sustainable future.</p>
         </div>
       </section>
 
@@ -51,11 +51,11 @@ export default function AboutUs() {
               <h2 className="mission-card__title">Our Mission</h2>
               <div className="mission-card__border" style={{backgroundColor: 'var(--crimson)'}}></div>
               <p>
-                Rare Mines Cleantech Pvt Ltd is a fast-growing Clean Technology company that develops low-cost, carbon-neutral extraction and recycling processes to obtain precious commodities from lithium-ion batteries and industrial by-products.
+                Rare Mines Cleantech Pvt Ltd is an indigenous, fast-growing clean technology company that develops low-cost, carbon-neutral extraction and recycling processes. We proudly support the Make in India initiative by recovering precious critical minerals locally.
                 <br /><br />
-                We are optimistic about the future. Our proprietary <strong>HYBRID-HYDROMETALLURGY™ (HHM)</strong> process enables us to extract valuable materials at the most affordable cost, while continuously increasing our impact on reducing CO₂ emissions.
+                We are building the foundation for Atmanirbhar Bharat. Our proprietary <strong>HYBRID-HYDROMETALLURGY™ (HHM)</strong> process eliminates import dependency, allowing us to extract valuable materials natively at the most affordable cost.
                 <br /><br />
-                Based in Bengaluru, Karnataka, India, we serve battery manufacturers, automotive companies, electronics producers, and government entities — helping them meet sustainability goals and regulatory compliance.
+                Based in Bengaluru, Karnataka, India, we serve domestic battery manufacturers, automotive companies, and government entities — helping India meet its strategic energy resilience goals and regulatory compliance.
               </p>
             </div>
             
@@ -64,9 +64,9 @@ export default function AboutUs() {
               <h2 className="mission-card__title">Our Vision</h2>
               <div className="mission-card__border" style={{backgroundColor: 'var(--blue)'}}></div>
               <p>
-                To pioneer fully closed-loop ecosystems that redefine global resource management. We envision a future where critical minerals are infinitely recovered, completely offsetting the need for new mining and drastically slashing global carbon footprints. 
+                To pioneer fully closed-loop ecosystems that redefine India's resource management. We envision an independent India where critical minerals are infinitely recovered domestically, completely offsetting the need for new, imported raw materials.
                 <br /><br />
-                Through continuous scaling of our HHM™ technologies, our objective is to become the worldwide standard in battery circularity, accelerating humanity's successful transition to 100% clean energy.
+                Through continuous scaling of our home-grown HHM™ technologies, our objective is to become the backbone of India's EV and battery ecosystem, securing the nation's successful transition to 100% clean energy.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function AboutUs() {
               { icon: SVGIcons.bulb, title: 'Innovation', desc: 'Our patented HHM™ process represents years of research and development to outperform existing recycling methods.', color: 'var(--blue)' },
               { icon: SVGIcons.handshake, title: 'Partnerships', desc: 'We believe in collaborative impact — working with industries, institutions, and governments for systemic change.', color: 'var(--crimson)' },
               { icon: SVGIcons.shield, title: 'Transparency', desc: 'We hold ourselves to the highest standards of accountability and openness with our partners and stakeholders.', color: 'var(--green)' },
-              { icon: SVGIcons.zap, title: 'Urgency', desc: 'We understand that the climate crisis demands immediate action. Every ton recycled matters, today.', color: 'var(--crimson)' },
+              { icon: SVGIcons.zap, title: 'National Security', desc: 'Critical minerals dictate the future of energy. Securing sovereign domestic supply chains is an immediate national imperative.', color: 'var(--crimson)' },
               { icon: SVGIcons.flask, title: 'Scientific Rigor', desc: 'Every claim we make is backed by validated research and measurable environmental outcomes.', color: 'var(--blue)' },
             ].map(v => (
               <div key={v.title} className="tech-card card-lift" style={{ '--tc-color': v.color }}>

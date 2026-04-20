@@ -67,9 +67,9 @@ export default function Products() {
           <div className="page-hero__bg-pattern"></div>
         </div>
         <div className="container page-hero__content">
-          <span className="section-eyebrow" style={{ color: 'var(--gold)' }}>What We Produce</span>
+          <span className="section-eyebrow" style={{ color: 'var(--gold)' }}>Make In India</span>
           <h1 style={{ color: 'var(--white)' }}>Our Products</h1>
-          <p style={{ color: 'var(--text-light)' }}>Battery-grade and industrial-grade materials recovered through our HHM™ recycling process.</p>
+          <p style={{ color: 'var(--text-light)' }}>Indigenous, battery-grade, and industrial-grade materials recovered through our HHM™ recycling process.</p>
         </div>
       </section>
 
@@ -77,9 +77,9 @@ export default function Products() {
         <div className="container">
           <div className="section-center" style={{ marginBottom: '3.5rem' }}>
             <span className="section-eyebrow">Product Portfolio</span>
-            <h2 className="section-title">Critical Minerals & Recovered Materials</h2>
+            <h2 className="section-title">Critical Minerals for India's Supply Chain</h2>
             <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Every material we recover re-enters the supply chain at the highest possible purity, reducing the need for virgin mining.
+              Every material we recover re-enters the domestic supply chain at the highest possible purity, eliminating reliance on imported raw materials.
             </p>
           </div>
           <div className="products-grid">
@@ -125,7 +125,7 @@ export default function Products() {
         <div className="container">
           <div className="cta-box" style={{ background: 'linear-gradient(135deg, var(--blue-dark), var(--green-dark))' }}>
             <h2>Need Specific Battery-Grade Materials?</h2>
-            <p>Tell us your specifications and volume requirements — we'll match your supply chain needs.</p>
+            <p>Tell us your specifications and volume requirements — we'll secure your domestic supply chain needs.</p>
             <div className="cta-btns">
               <Link to="/contact" className="btn btn-primary">Request Quotation</Link>
               <Link to="/battery-recycling" className="btn btn-outline-white">Learn About Our Process</Link>

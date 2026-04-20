@@ -30,7 +30,7 @@ export default function Footer() {
   <img
     src="/logo.png"
     alt="Rare Mines Cleantech Pvt Ltd"
-    style={{ height: '60px', width: 'auto', filter: 'brightness(0) invert(1)' }}
+    style={{ height: '60px', width: 'auto' }}
   />
 </div>
               <p className="footer__desc">

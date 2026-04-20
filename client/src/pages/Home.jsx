@@ -72,7 +72,7 @@ export default function Home() {
             </h1>
             <p className="hero__tagline">FOR A BETTER WORLD</p>
             <p className="hero__desc">
-              We develop low-cost, carbon-neutral extraction and recycling processes to obtain precious commodities from Li-ion batteries, reducing CO₂ emissions while powering a circular economy.
+              We develop low-cost, carbon-neutral extraction and recycling processes right here in India, recovering precious commodities from Li-ion batteries to build a secure, domestic closed-loop supply chain.
             </p>
             <div className="hero__actions">
               <Link to="/battery-recycling" className="btn btn-primary hero__btn">
@@ -171,7 +171,7 @@ export default function Home() {
         <div className="ticker__inner">
           <span className="ticker__label">LATEST</span>
           <div className="ticker__track">
-            <span>Rare Mines signs an MoU with the Karnataka govt worth ₹350-crore &nbsp;·&nbsp; Sustainable Recycling of Li-Ion Batteries &nbsp;·&nbsp; Pioneering Carbon-Neutral Extraction Process &nbsp;·&nbsp; Rare Mines signs an MoU with the Karnataka govt worth ₹350-crore &nbsp;·&nbsp; Sustainable Recycling of Li-Ion Batteries &nbsp;·&nbsp; Pioneering Carbon-Neutral Extraction Process &nbsp;·&nbsp;</span>
+            <span>Rare Mines signs an MoU with the Karnataka govt worth ₹350-crore &nbsp;·&nbsp; Powering Atmanirbhar Bharat through Domestic Recycling &nbsp;·&nbsp; Securing India's Supply of Critical Minerals &nbsp;·&nbsp; Rare Mines signs an MoU with the Karnataka govt worth ₹350-crore &nbsp;·&nbsp; Unlocking India's EV Potential with Indigenous Technology &nbsp;·&nbsp; Building a Circular Economy for Make in India &nbsp;·&nbsp;</span>
           </div>
         </div>
       </div>
@@ -200,11 +200,11 @@ export default function Home() {
         <div className="container">
           <div className={`liion-inner reveal ${missionVisible ? 'visible' : ''}`} ref={missionRef}>
             <div className="liion-content">
-              <span className="section-eyebrow">Our Focus</span>
-              <h2 className="section-title">Sustainable Recycling of<br />Li-Ion Batteries</h2>
+              <span className="section-eyebrow">India First Focus</span>
+              <h2 className="section-title">Fueling India's Transition to<br />Clean Energy</h2>
               <div className="divider"></div>
               <p>
-                We provide a sustainable and efficient Lithium-ion battery recycling clean-tech solution. Our low-cost, carbon-neutral process extracts precious commodities at the cheapest possible price, striving tirelessly to reduce CO₂ emissions.
+                We reduce India's reliance on imported critical minerals through sustainable, localized Lithium-ion battery recycling. Our indigenous, carbon-neutral process extracts precious commodities natively, bolstering national energy security and championing the Make in India initiative.
               </p>
               <Link to="/li-ion-battery" className="btn btn-navy" style={{ marginTop: '1.5rem' }}>
                 Learn More →
@@ -243,8 +243,8 @@ export default function Home() {
               {[
                 { value: '1,500', unit: 'GWh', label: 'Li-Ion Battery Market Globally', color: 'var(--crimson)' },
                 { value: '$400B', unit: '+', label: 'Total Market Size', color: 'var(--blue)' },
-                { value: '145M', unit: '', label: 'EVs on Roads by 2030', color: 'var(--green-light)' },
-                { value: '40X', unit: '', label: 'Lithium Demand Growth Rate', color: '#E5A937' },
+                { value: '145M', unit: '', label: 'EVs on Roads by 2030', color: 'var(--green)' },
+                { value: '40X', unit: '', label: 'Lithium Demand Growth Rate', color: '#e5a937ff' },
               ].map((s) => (
                 <div key={s.label} className="projection-card glass-card-dark" style={{ '--p-color': s.color }}>
                   <div className="projection-card__value">{s.value}<span className="unit">{s.unit}</span></div>
@@ -275,8 +275,8 @@ export default function Home() {
             {[
               {
                 icon: SVGIcons.flask,
-                title: 'Unified Methodology',
-                desc: 'Simple process to recycle all types of Li-Ion batteries. No import dependency on raw materials.',
+                title: 'Eliminating Dependency',
+                desc: 'A unified process to recycle all types of Li-Ion batteries entirely within India, strengthening self-reliance.',
                 color: 'var(--crimson)',
               },
               {
@@ -287,14 +287,14 @@ export default function Home() {
               },
               {
                 icon: SVGIcons.leaf,
-                title: 'Environment Friendly',
-                desc: 'Carbon Negative Process, closed loop with negligible waste generation. Self-Sustainable.',
+                title: 'Domestic Circularity',
+                desc: 'Carbon Negative Process building a sustainable, localized closed-loop economy for India\'s future.',
                 color: 'var(--green)',
               },
               {
                 icon: SVGIcons.shield,
-                title: 'Intellectual Property',
-                desc: 'Strong IP development for competitive advantage. Licensable Technology — unique and patented.',
+                title: 'Indigenous Innovation',
+                desc: 'Patented, home-grown technology developed in India, setting a global benchmark for critical mineral recovery.',
                 color: 'var(--crimson)',
               },
             ].map((f) => (
@@ -324,12 +324,12 @@ export default function Home() {
               </div>
               <div className="process-flow__connector"></div>
               <div className="process-flow__step">
-                <div className="process-flow__dot" style={{ backgroundColor: 'var(--green-light)' }}></div>
+                <div className="process-flow__dot" style={{ backgroundColor: 'var(--green)' }}></div>
                 <span>Pre-processing</span>
               </div>
               <div className="process-flow__connector"></div>
               <div className="process-flow__step">
-                <div className="process-flow__dot" style={{ backgroundColor: 'var(--green)' }}></div>
+                <div className="process-flow__dot" style={{ backgroundColor: '#e5a937' }}></div>
                 <span>Processing</span>
               </div>
             </div>

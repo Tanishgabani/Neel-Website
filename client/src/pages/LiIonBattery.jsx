@@ -12,9 +12,9 @@ export function LiIonBattery() {
           <div className="page-hero__bg-pattern"></div>
         </div>
         <div className="container page-hero__content">
-          <span className="section-eyebrow" style={{ color: 'var(--teal)' }}>Battery Technology</span>
+          <span className="section-eyebrow" style={{ color: 'var(--teal)' }}>India's EV Future</span>
           <h1 style={{ color: 'var(--white)' }}>Li-Ion Battery Recycling</h1>
-          <p style={{ color: 'var(--text-light)' }}>Understanding the most dominant battery technology and why sustainable recycling is critical.</p>
+          <p style={{ color: 'var(--text-light)' }}>Securing the critical minerals needed for India's rapidly growing EV ecosystem.</p>
         </div>
       </section>
 
@@ -29,10 +29,10 @@ export function LiIonBattery() {
                 Lithium-Ion Batteries (LiBs) are the most widely used and primary battery technology, having become irreplaceable in modern life. They power portable electronics, EVs, satellites, and grid storage systems — and are central to the global effort to tackle climate change.
               </p>
               <p>
-                However, their explosive growth creates a serious end-of-life challenge. By 2030, the world will face <strong>2.3 million metric tonnes</strong> of end-of-life Li-ion batteries annually — requiring efficient, sustainable recycling at scale.
+                However, their explosive growth, especially in India's booming EV sector, creates a serious end-of-life challenge. By 2030, the world will face <strong>2.3 million metric tonnes</strong> of end-of-life Li-ion batteries globally — requiring efficient, sustainable recycling at scale.
               </p>
               <p>
-                At Rare Mines, we are building the infrastructure and processes to turn this challenge into a circular economy opportunity — extracting critical minerals and returning them to the supply chain.
+                At Rare Mines, we ensure that India is not left dependent on raw material imports. We are building the infrastructure to turn this challenge into an Atmanirbhar Bharat opportunity — extracting critical minerals natively and returning them to the domestic supply chain.
               </p>
             </div>
             <div>

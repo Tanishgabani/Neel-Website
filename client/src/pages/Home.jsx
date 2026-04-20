@@ -152,6 +152,12 @@ export default function Home() {
               <div className="hero__orbit hero__orbit--3">
                 <div className="hero__orbit-dot hero__orbit-dot--ni">Ni</div>
               </div>
+              <div className="hero__orbit hero__orbit--4">
+                <div className="hero__orbit-dot hero__orbit-dot--al">Al</div>
+              </div>
+              <div className="hero__orbit hero__orbit--5">
+                <div className="hero__orbit-dot hero__orbit-dot--cu">Cu</div>
+              </div>
             </div>
           </div>
         </div>
@@ -210,6 +216,8 @@ export default function Home() {
                 { num: 3, mass: '6.94', symbol: 'Li', name: 'Lithium', color: 'var(--crimson)' },
                 { num: 27, mass: '58.93', symbol: 'Co', name: 'Cobalt', color: 'var(--blue)' },
                 { num: 28, mass: '58.69', symbol: 'Ni', name: 'Nickel', color: 'var(--green)' },
+                { num: 13, mass: '26.98', symbol: 'Al', name: 'Aluminum', color: '#a1a1a1' },
+                { num: 29, mass: '63.55', symbol: 'Cu', name: 'Copper', color: '#b87333' },
               ].map((el) => (
                 <div key={el.symbol} className="element-card glass-card-light" style={{ '--el-color': el.color }}>
                   <div className="element-card__top">

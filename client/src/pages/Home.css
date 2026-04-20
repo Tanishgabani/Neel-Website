@@ -260,6 +260,8 @@
 .hero__orbit--1 { animation: spin 10s linear infinite; }
 .hero__orbit--2 { animation: spin 15s linear infinite reverse; }
 .hero__orbit--3 { animation: spin 8s linear infinite; }
+.hero__orbit--4 { animation: spin 12s linear infinite reverse; }
+.hero__orbit--5 { animation: spin 20s linear infinite; }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -288,6 +290,8 @@
 
 .hero__orbit-dot--co { background: var(--blue); box-shadow: 0 4px 12px rgba(43, 91, 168, 0.4); }
 .hero__orbit-dot--ni { background: var(--green-dark); box-shadow: 0 4px 12px rgba(46, 138, 98, 0.4); }
+.hero__orbit-dot--al { background: #a1a1a1; box-shadow: 0 4px 12px rgba(161, 161, 161, 0.4); }
+.hero__orbit-dot--cu { background: #b87333; box-shadow: 0 4px 12px rgba(184, 115, 51, 0.4); }
 
 /* Scroll indicator */
 .hero__scroll-indicator {
@@ -441,9 +445,23 @@
 }
 
 .liion-elements {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
+}
+
+.element-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  min-width: 140px;
+  max-width: calc(33.333% - 1rem);
+}
+
+@media (max-width: 768px) {
+  .element-card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
 }
 
 .element-card {

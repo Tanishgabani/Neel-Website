@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Li-Ion Battery', path: '/li-ion-battery' },
   { label: 'Products', path: '/products' },
   { label: 'Battery Recycling', path: '/battery-recycling' },
+  { label: 'ESG', path: '/esg' },
   { label: 'SDG Goals', path: '/sdg-goals' },
   { label: 'Blog', path: '/blog' },
 ];

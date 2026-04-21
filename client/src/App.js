@@ -14,6 +14,7 @@ import AboutUs from './pages/AboutUs';
 import { LiIonBattery } from './pages/LiIonBattery';
 import Products from './pages/Products';
 import BatteryRecycling from './pages/BatteryRecycling';
+import ESG from './pages/ESG';
 import { SdgGoals, Contact, NotFound } from './pages/OtherPages';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -35,6 +36,7 @@ function App() {
               <Route path="/li-ion-battery" element={<LiIonBattery />} />
               <Route path="/products" element={<Products />} />
               <Route path="/battery-recycling" element={<BatteryRecycling />} />
+              <Route path="/esg" element={<ESG />} />
               <Route path="/sdg-goals" element={<SdgGoals />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />

@@ -32,7 +32,7 @@ export default function BatteryRecycling() {
             <span className="section-eyebrow">Accepted Materials</span>
             <h2 className="section-title">What We Recycle</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.25rem', marginBottom: '4rem' }}>
+          <div className="sdg-grid" style={{ marginBottom: '4rem' }}>
             {[
               { icon: <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a1 1 0 00-.8-.4H8.32a2 2 0 00-1.93 1.46L4 14v2h3m7 0v-2m-7 0a3 3 0 106 0m4 0a3 3 0 106 0"/></svg>, label: 'EV Batteries', desc: 'Complete packs and modules' },
               { icon: <svg width="40" height="40" fill="none" stroke="currentColor" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>, label: 'Consumer Electronics', desc: 'Laptops, phones, tablets' },
@@ -79,7 +79,7 @@ export default function BatteryRecycling() {
             <span className="section-eyebrow">Why HHM™</span>
             <h2 className="section-title">Advantages Over Conventional Methods</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div className="products-grid">
             {[
               { title: 'Carbon Neutral', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 20A7 7 0 014 13v-3h3v3a4 4 0 004 4h3m4-4h3V4h-3v3a4 4 0 00-4 4h-3m4 8v3h-3v-3"/></svg>, desc: 'Zero net carbon emissions. Closed-loop process with energy recovery at every stage.', color: 'var(--green)' },
               { title: 'No Toxic Emissions', icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9.59 4.59A2 2 0 1111 8H2m10.59 11.41A2 2 0 1014 16H2m15.73-8.27A2.5 2.5 0 1119.5 12H2"/></svg>, desc: 'Aqueous chemistry eliminates toxic gas emissions associated with high-temperature smelting.', color: 'var(--blue)' },

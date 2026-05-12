@@ -65,7 +65,7 @@ export function LiIonBattery() {
               Each battery contains valuable materials that can be extracted, refined, and re-entered into the supply chain.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          <div className="products-grid">
             {[
               { num: 3, mass: '6.94', symbol: 'Li', name: 'Lithium', demand: '250,000–450,000 TON demand by 2030', color: 'var(--crimson)', desc: 'Essential for battery cathodes. Powers the charge-discharge cycle in every Li-ion cell.' },
               { num: 27, mass: '58.93', symbol: 'Co', name: 'Cobalt', demand: '1.3M–2.4M TON demand by 2030', color: 'var(--blue)', desc: 'Stabilizes battery chemistry and improves energy density in NMC and NCA cathodes.' },

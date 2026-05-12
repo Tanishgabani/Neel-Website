@@ -66,7 +66,7 @@ export default function ESG() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
+          <div className="esg-pillars-grid">
             {pillars.map((p) => (
               <div key={p.title} style={{
                 background: 'var(--white)', borderRadius: 'var(--radius-lg)', padding: '3rem 2rem',
@@ -99,7 +99,7 @@ export default function ESG() {
             <span className="section-eyebrow">Measurable Progress</span>
             <h2 className="section-title">Our Impact Highlights</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginTop: '3rem' }}>
+          <div className="esg-impact-grid">
             {[
               { label: 'Material Recovery', value: '95%+', desc: 'Recovering critical battery materials at industry-leading rates.' },
               { label: 'CO₂ Footprint', value: 'Net-Zero', desc: 'Targeting a net-zero impact through carbon-neutral processing.' },

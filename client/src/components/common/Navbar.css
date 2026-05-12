@@ -188,7 +188,7 @@
 .navbar__mobile {
   display: none;
   flex-direction: column;
-  padding: 1rem 2rem 1.5rem;
+  padding: 0 2rem;
   background: var(--white);
   border-top: 1px solid var(--light-gray);
   max-height: 0;

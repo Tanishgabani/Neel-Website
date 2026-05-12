@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
-import logoImg from '../../assets/logo.png';
+
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="navbar__logo">
           <img
-            src={logoImg}
+            src="/Rare.PNG"
             alt="Rare Mines Cleantech Pvt Ltd"
             className="navbar__logo-img"
           />
